@@ -1,0 +1,35 @@
+<% if article %>
+<article class="post">
+  <header class="post-header">
+    <!-- 标题 -->
+    <%= content_tag :h1, link_to(article.title, article_path(article), class: 'post-title-link'), class: 'post-title' %>
+    <!-- 文章属性 -->
+    <div class="post-meta">
+      <span class="post-time">
+        <%= content_tag :span, t('article.post_on'), class: 'post-meta-item-text' %>
+        <%= mtime_tag article.created_at %>
+      </span>
+      <span class="post-category"> &nbsp;|&nbsp;
+        <%= content_tag :span, t('article.category_in'), class: 'post-meta-item-text' %>
+        <%= category_tag @user, article.category %>
+      </span>
+      <!-- 阅读与评论数 -->
+      <span class="post-view-comments"> &nbsp;|&nbsp;
+        <%= content_tag :span, t('article.view'), class: 'post-meta-item-text' %> ·
+        <%= content_tag :span, article.view_count, class: 'post-view-count' %>&nbsp;
+        <%= content_tag :span, t('article.comment'), class: 'post-meta-item-text' %> ·
+        <%= content_tag :span, article.comment_count, class: 'post-view-count' %>
+      </span>
+    </div>
+  </header>
+  <!-- 文章缩略内容 -->
+  <%= truncate_article_tag article, class: 'post-body markdown-body' %>
+  <!-- 标签与全阅 -->
+  <footer class="post-footer">
+    <div class="post-tags" >
+      <%= tags_tag_with_user @user, article.tags %>
+    </div>
+    <%= link_to t('article.read_more'), article_path(article), class: 'post-more-link' %>
+  </footer>
+</article>
+<% end %>

@@ -1,0 +1,15 @@
+<div class="modal fade" id="confirm-delete" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content col-md-7 col-center-block mdialog">
+      <div class="modal-header">
+        <span role="button" class="close" data-dismiss="modal">&times;</span>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <%= link_to t("confirm"), '#', method: 'DELETE', class: "pull-left", id: "confirm" %>
+        <%= link_to t("cancel"), '#', class: "pull-right", id: "cancel", 'data-dismiss': "modal" %>
+      </div>
+    </div>
+  </div>
+</div>

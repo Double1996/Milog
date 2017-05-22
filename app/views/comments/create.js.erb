@@ -1,0 +1,18 @@
+<% if @comment.valid? %>
+  $('#comments').append("<%= j render('features/comment', comment: @comment) %>");
+  $('#post-btn').text('<%= t("comment.post") %>');
+
+  // 清除编辑区
+  $('#editor').val('');
+  $('#content_html').val('');
+  // 清除回复状态
+  $("#comment_reply_id").val('');
+  // 隐藏错误提示
+  $('#error-tips').css("display", "none");
+  // 更新评论数
+  $('.comment_count').eq(0).html("<%= t('comment.other', size: @commentsize) if @commentsize %>");
+  $('#post-comment-count').eq(0).html("<%= @commentsize if @commentsize %>");
+<% else %>
+  $('#error-tips').css("display", "block");
+  $('#error-tips #error-msg').text("<%= @comment.errors.full_messages[0] %>");
+<% end %>

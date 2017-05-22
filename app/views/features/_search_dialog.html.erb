@@ -1,0 +1,20 @@
+<div class="modal fade" id="search-dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content mdialog">
+      <div class="modal-header">
+        <span role="button" class="close" data-dismiss="modal">&times;</span>
+        <%= form_tag search_url, method: 'GET', remote: true do %>
+        <div class="inupt-group-icon">
+          <%= tag :input, type: :text, id: 'search_in_keyword', name: 'token', placeholder: placeholder_text %>
+          <i class="fa fa-search icon"></i>
+        </div>
+        <% end %>
+      </div>
+      <div class="modal-body" id="search-result">
+        <div id="no-result">
+          <i class="fa fa-search fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

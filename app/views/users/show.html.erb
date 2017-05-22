@@ -1,0 +1,94 @@
+<% provide :hidden_nav_center_items, true %>
+<% provide :bodyclass, 'userspace' %>
+<% provide :pre_title, capitalize_name(@user) %>
+
+<div class="mainer" style="margin-top: 0; padding-top: 20px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel panel-default profile">
+          <div class="panel-body">
+            <div class="media">
+              <div class="media-left avatar">
+                <%= avatar_tag @user, :lg, link: true %>
+                <div class="state">
+                  <%= user_state_tag @user %>
+                </div>
+              </div>
+              <div class="media-body">
+                <div class="item user">
+                  <%= content_tag :span, capitalize_name(@user)%>
+                  <%= content_tag :span, "(#{@user.nickname})" unless @user.nickname.blank? %>
+                </div>
+                <div class="item number">
+                  <%= content_tag :span, t("user.index", index: @user.id) %> / 
+                  <%= content_tag :span, mtime_tag(@user.created_at, strf: '%Y-%m-%d') %>
+                </div>
+                <div class="item counts">
+                  <%= content_tag :span, t("user.articles", size: @article_size) %> · 
+                  <%= content_tag :span, t("user.comments", size: @comment_size) %>
+                </div>
+                <div class="item social">
+                  <%= email_tag @user %>
+                  <%= github_tag @user %>
+                  <%= weibo_tag @user %>
+                  <%= personal_website_tag @user %>
+                </div>
+              </div>
+            </div>
+            <div class="follow-info row">
+              <div class="col-xs-6 followers">
+                <%= content_tag :div, link_to(@followers_size, user_path(@user.username, tab: 'followers'), id: 'followers_size', remote: true), class: 'counter' %>
+                <%= content_tag :div, link_to(t('user.followers'), user_path(@user.username, tab: 'followers'), remote: true), class: 'text' %>
+              </div>
+              <div class="col-xs-6 following">
+                <%= content_tag :div, link_to(@following_size, user_path(@user.username, tab: 'following'), id: 'following_size', remote: true), class: 'counter' %>
+                <%= content_tag :div, link_to(t('user.following'), user_path(@user.username, tab: 'following'), remote: true), class: 'text' %>
+              </div>
+            </div>
+              <div class="buttons row">
+                <% if !current_user?(@user) %>
+                <div class="col-xs-6">
+                  <%= follow_tag @user %>
+                </div>
+                <% end %>
+                <%= content_tag :div, class: "#{ current_user?(@user) ? 'col-xs-8 col-center-block' : 'col-xs-6' }" do -%>
+                  <%= content_tag :a, href: blog_user_path(@user.username), class: 'btn btn-default btn-block btn-blog' do -%>
+                    <%= content_tag :i, "", class: 'fa fa-user' %>&nbsp;
+                    <%= content_tag :span, current_user?(@user) ? t("user.my_blog") : t("user.other_blog") %>
+                  <% end -%>
+                <% end -%>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <ul class="nav nav-tabs" id="user-nav-tabs">
+          <%= content_tag :li, link_to(t("user.tab.articles"), user_path(@user.username, tab: 'articles'), remote: true), class: "#{'active' if @tab == UsersController::ARTICLES}", 'data-tab'=> 'articles' %>
+          <%= content_tag :li, link_to(t("user.tab.comments"), user_path(@user.username, tab: 'comments'), remote: true), class: "#{'active' if @tab == UsersController::COMMENTS}", 'data-tab'=> 'comments' %>
+          <%= content_tag :li, link_to(t("user.tab.bio"), user_path(@user.username, tab: 'bio'), remote: true), class: "#{'active' if @tab == UsersController::BIO}", 'data-tab'=> 'bio' %>
+          <%= content_tag :li, link_to(t("user.followers"), user_path(@user.username, tab: 'followers'), remote: true), class: "#{'active' if @tab == UsersController::FOLLOWERS}", 'data-tab'=> 'followers' %>
+          <%= content_tag :li, link_to(t("user.following"), user_path(@user.username, tab: 'following'), remote: true), class: "#{'active' if @tab == UsersController::FOLLOWING}", 'data-tab'=> 'following' %>
+        </ul>
+        <div class="tab-content">
+          <div class="content" id="user-tab-content">
+            <% case @tab %>
+            <% when UsersController::COMMENTS %>
+              <%= render 'users/comments', comments: @obj %>
+            <% when UsersController::BIO %>
+              <%= content_tag :div, sanitize(@obj), class: 'bio' %>
+            <% when UsersController::FOLLOWERS %>
+              <%= render 'features/users', users: @obj, user_in_cols: 2 %>
+            <% when UsersController::FOLLOWING %>
+              <%= render 'features/users', users: @obj, user_in_cols: 2 %>
+            <% else %>
+              <%= render 'users/articles', articles: @obj %>
+            <% end %>
+            <%= will_paginate @obj, renderer: WillPaginate::ActionView::BlogLinkRenderer if @tab != UsersController::BIO %>
+          </div>
+        </div>  
+      </div> 
+    </div>
+  </div>
+</div>
+

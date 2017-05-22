@@ -1,0 +1,453 @@
+# To use the locales, use `I18n.t`:
+#     I18n.t 'login'
+#
+# In views, this is aliased to just `t`:
+#     <%= t('login.remember_me') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#     I18n.locale = :es
+#  
+# For paramater 
+#     user_hello: "hello %{name}"
+#     <%= t('user_hello', username: @user.name) %>
+#     
+# Support new locale to see application_controller#set_locale
+
+zh-CN:
+  lang: 中文
+  signup: 注册
+  signin: 登录
+  signed_in: 已登录
+  signout: 退出
+  username: 用户名
+  email: Email 地址
+  current_password: 旧密码
+  password: 密码
+  password_confirmation: 确认密码
+  forgot_password: 忘记密码
+  send_psw_reset_link: 发送重置密码链接
+  send_psw_reset_tips: 请输入Email，我们会将重置密码信息发送给您
+  reset_password: 重置密码
+  change_password: 修改密码
+  update_password: 更新密码
+  invalid: 是无效的
+  delete: 删除
+  update: 更新
+  opt: 操作
+  edit: 编辑
+  confirm: 确认
+  cancel: 取消
+  submit: 提交数据
+
+  search: 搜索
+  search_in_blog: 在当前博客中搜索
+  search_in_site: 搜索本站内容
+  search_result: 关于 “%{token}” 的搜索结果，共 %{size} 篇文章
+
+  login: 
+    remember_me: 记住我
+    forget_me: 忘了密码？
+
+  syml:
+    dot: '，'
+
+  flash:
+    info:
+      validated_mail: 验证邮件已发送，请检查您的邮箱
+      psw_reset_mail: 重置密码邮件已发送，请检查您的邮箱
+    danger:
+      link_invalid: 链接无效
+      params_invalid: 参数非法
+      default_category_change: 不能更改默认分类
+    warning:
+      link_expired: 链接失效
+      resend_validation_mail: 点击重发验证邮件
+      need_sign_in: 请登录您的账号
+      update_profile: 个人资料更新失败
+      avatar_too_big: 头像图片过大（最大是 %{size} MB）
+      picture_too_big: 图片过大（最大是 %{size} MB）
+      need_activation: 请激活您的账号
+      send_validation_mail: 点击发送验证邮件
+      user_not_fount: 用户"%{name}"没有找到
+      user_not_fount_by_id: ID为"%{value}"的用户没有找到
+      username_or_email_has_existed: 用户名或邮箱已存在
+      article_not_fount: ID为"%{value}"的文章没有找到
+      category_not_fount: ID为"%{value}"的分类没有找到
+      user_categoryship_not_fount: ID为"%{value}"的用户分类没有找到
+      tag_not_fount: ID为"%{value}"的标签没有找到
+      comment_not_fount: ID为"%{value}"的评论没有找到
+      picture_not_fount: ID为"%{value}"的图片没有找到
+    success:
+      active_account: 用户已成功激活
+      reset_password: 已成功修改密码
+      update_profile: 已更新个人资料
+      update_avatar: 已更新头像
+      save_article: 已保存文章
+      delete_article_with_title: 已删除文章"%{title}"
+      save_resume: 已保存简历
+      delete_user: 已删除用户"%{name}"
+      create_user: 已创建用户"%{name}"
+      update_account: 已更新账户信息
+      delete_article: 已删除ID为"%{value}"的文章
+      create_article: 已成功添加文章
+      update_article: 已成功更新文章
+      delete_category: 已删除ID为"%{value}"的分类
+      delete_user_categoryship: 已删除ID为"%{value}"的用户分类关系
+      create: 添加成功
+      update: 更新成功
+      delete_tag: 已删除ID为"%{value}"的标签
+      delete_comment: 已删除ID为"%{value}"的评论
+      delete_picture: 已删除ID为"%{value}"的图片
+
+  errors:
+    username_format: 只能含字母、数字、中横线或下划线
+    email_disabled: 不存在或被禁用
+    not_right: 不正确
+    not_find: 没有找到
+    invalid_format: 是无效的
+    avatar_too_big: 过大（最大是 %{size} MB）
+    category_has_existed: 文章分类"%{name}"已存在， 请换一个
+    category_not_fount:  没有找到此文章分类
+    opt_illegal: 操作非法 
+    tags_too_much: 数量过多（最多是 %{size} 个） 
+    must_be_present: 必须已存在
+    must_be_posted: 必须已发布
+    paramater_illegal: 参数非法
+    follower_following_be_unique: 和正在关注ID关系必须是唯一
+    follower_not_eq_following: 和正在关注ID必须不同
+    actor_and_user_are_not_equal: 和通知者ID必须不同
+  success:
+    category_has_deleted: 文章分类"%{name}"已删除
+    category_has_updated: 文章分类"%{bef_name}"已更名为"%{upd_name}"
+    content_has_saved: 内容已保存
+    comment_has_deleted: "%{index}楼已被删除"
+  ask:
+    user_delete:
+      pre: "是否删除用户名为\""
+      suf: "\"的用户？"
+    article_delete:
+      pre: "是否删除ID为\""
+      suf: "\"的文章？"
+    category_delete:
+      pre: "是否删除ID为\""
+      suf: "\"的分类？"
+    user_categoryship_delete:
+      pre: "是否删除ID为\""
+      suf: "\"的用户分类关系？"
+    tag_delete:
+      pre: "是否删除ID为\""
+      suf: "\"的标签？"
+    comment_delete:
+      pre: "是否删除ID为\""
+      suf: "\"的评论？"
+    picture_delete:
+      pre: "是否删除ID为\""
+      suf: "\"的图片？"
+
+  activerecord:
+    models:
+      user: 用户
+      category: 文章分类
+      article: 文章
+      picture: 图片
+      commnet: 评论
+      resume: 简历
+      hold: 暂存
+      tag: 标签
+      usership: 用户关系
+      notification: 通知
+    attributes:
+      user:
+        username: 用户名
+        email: 邮箱
+        password: 密码
+        current_password: 旧密码
+        password_confirmation: 确认密码
+        avatar: 头像图片
+      category:
+        name: 文章分类
+      article:
+        title: 标题
+        content: 正文
+        category: 分类
+        tag: 标签
+        user: 用户
+        user_id: 用户 ID
+      picture:
+        picture: 图片
+      comment:
+        article: 文章
+        content: 内容
+        user: 用户
+        user_id: 用户
+      resume: 
+        user_id: 用户
+        user: 用户
+        content: 内容
+      hold:
+        user_id: 用户
+        user: 用户
+        holdable_type: 类型
+      user_categoryship:
+        user: 用户
+        user_id: 用户ID
+        category: 分类
+        category_id: 分类ID
+      tag:
+        name: 标签
+      usership:
+        follower: 关注者
+        following: 正在关注
+        follower_id: 关注者ID
+        following_id: 正在关注者ID
+      notification:
+        actor_id: 通知发起者ID
+        user_id: 通知者ID
+
+  accounts_mailer:
+    hi: Hi %{username}，
+    help: 请勿回复此邮件，如果有疑问，请联系我们 %{support_email}
+    footer: '- Milog'
+    active_account: 
+      subject: 欢迎使用Milog! 立即激活您的账号
+      header: 感谢您注册Milog! 请点击以下链接激活您的账号：
+      send_password_header: 感谢您使用Milog! 我们为您生成密码： %{password}，请激活您的账号后，前往 [个人资料设置] 重置密码。点击以下链接激活您的账号：
+      tips: 如果点击链接无效，请尝试将链接复制到浏览器地址栏访问。
+    reset_password: 
+      subject: 重置密码
+      header: 您已经请求了重置密码，可以点击以下连接进行操作
+      tips: 如果您没有请求重置密码，请忽略此邮件。在您点击上面连接修改密码之前，您的密码将会保持不变。
+
+  home: 首页
+  category: 分类
+  archive: 归档
+  aboutme: 关于
+  search: 搜索
+  blog: 博客
+  new_blog: 写博客
+  account_profile: 个人资料设置
+  drafts: 草稿箱
+  resume: 我的简历
+  edit_resume: 写简历
+  
+  profile:
+    nickname: 名字
+    email: Email
+    email_public: 公开Email
+    account: 账号
+    weibo: 微博
+    personal_website: 个人主页
+    bio: 个人介绍 
+    upload_avatar: 上传头像
+    update_profile: 更新资料
+
+  categories:
+    default: 默认
+    zero: 暂无分类
+    other: "目前共有 %{size} 个分类"
+    name: 分类名
+    user: 用户名
+    user_id: 用户 ID
+
+  tags:
+    zero: 暂无标签
+    other: "目前共有 %{size} 个标签"
+    name: 标签名
+
+  article:
+    title_tips: 在这里填入文章标题
+    category: 分类
+    new_category: 新的分类/回车确认
+    setting_category: 文章分类设置
+    edit: 编辑
+    preview: 预览
+    delete: 删除
+    tag: 标签
+    save: 保存草稿
+    post: 发布文章
+    to_view: 阅读文章
+    tag_tips: 请输入关键字, 用逗号隔开, 最多5个
+    post_on: 发布于
+    edit_on: "最后编辑时间："
+    category_in: 分类于
+    view: 阅读
+    comment: 评论
+    read_more: 阅读全文»
+    zero: 暂无文章
+    other: "目前共有 %{size} 篇文章"
+    all: 全部文章
+    title: 标题
+    view_count: 阅读数
+    comment_count: 评论数
+    user: 用户
+    create_time: 创建时间
+    user_id: 用户 ID
+    category_id: 分类 ID
+    update_article: 更新文章
+
+  draft:
+    zero: 暂无草稿
+    other: "目前共有 %{size} 篇草稿"
+
+  comment:
+    zero: 暂无评论
+    other: "%{size} 条评论"
+    edit: 编辑
+    reply: 回复
+    delete: 删除
+    post: 发布评论
+    update: 更新评论
+    error: "错误： "
+    content: 内容
+    user: 用户
+    user_id: 用户 ID
+    article_id: 文章 ID
+    reply: 回复
+    reply_id: 回复 ID
+    index: 楼数
+    create_time: 创建时间
+    deleted_state: 删除?
+
+  picture:
+    name: 图片
+    url: 链接
+    user: 用户
+    upload_time: 上传时间
+
+  resumes:
+    pubilc_resume: 公开简历
+    save_resume: 保存简历
+
+  will_paginate:
+    previous_label: '<'
+    next_label: '>'
+
+  markdown-toolbar:
+    bold: 强调
+    italic: 斜体
+    title: 标题
+    quote: 引用
+    ul: 无序列表
+    ol: 有序列表
+    code: 代码
+    link: 链接
+    image: 图片
+    emoji: 表情
+
+  console: 控制台
+  console-nav:
+    summary: 概要
+    user: 用户
+    article: 文章
+    category: 分类
+    tag: 标签
+    comment: 评论
+    picture: 图片
+  c-summary:
+    total: 全部
+    posted: 已发布
+    not_post: 未发布
+    used: 已使用
+    not_use: 未使用
+    deleting: 删除中
+    will_delete: 待删除
+    user:
+      zero: 暂无用户
+      other: "目前共有 %{size} 位用户"
+      normal: 会员
+      admin: 管理员
+      disabled: 禁用
+      new: 添加用户
+      state: 身份
+      activation: 激活状态
+      created_at: 注册时间
+      update: 更新用户资料
+      update_account: 更新账户
+      account_info: 账户信息
+      profile: 个人资料
+    article:
+      zero: 暂无文章
+      other: "目前共有 %{size} 篇文章"
+      new: 添加文章
+    category:
+      zero: 暂无分类
+      other: "目前共有 %{size} 个分类"
+      new: 添加分类/用户分类关系
+      aboutuser: 与用户
+      rename: 重命名分类
+      update_ship: 更新用户分类关系
+    tag:
+      zero: 暂无标签
+      other: "目前共有 %{size} 个标签"
+      new: 添加标签
+      rename: 重命名标签
+    comment:
+      zero: 暂无评论
+      other: "目前共有 %{size} 条评论"
+      new: 添加评论
+    picture:
+      zero: 暂无图片
+      other: "目前共有 %{size} 张图片"
+      new: 上传图片
+
+  community:
+    slogan: 分享内容 交流想法
+    sub_slogan: 一个基于内容分享的社区
+    our_social: Milog社区
+    join_us: 加入我们
+    my_space: 我的空间
+
+    home: 社区
+    hottest: 热门文章
+    latest: 最新发布
+
+    opts: 查看 ：
+    more: 更多
+    time: 时间
+    view: 阅读
+    comment: 评论
+
+    statistics: 统计信息
+    account_num: 社区会员： %{num}人
+    article_num: 文章数： %{num}篇
+    comment_num: 评论数： %{num}条
+    accounts: 社区会员
+    active_account_tmonth: 本月活跃会员
+
+    hottest_today: 本日热门： %{num}篇
+    hottest_tweek: 本周热门： %{num}篇
+    hottest_tmonth: 本月热门： %{num}篇
+    latest_today: 本日发布： %{num}篇
+    latest_tweek: 本周发布： %{num}篇
+    latest_tmonth: 本月发布： %{num}篇
+    hottest_today_pre: 本日热门
+    hottest_tweek_pre: 本周热门
+    hottest_tmonth_pre: 本月热门
+    latest_today_pre: 本日发布
+    latest_tweek_pre: 本周发布
+    latest_tmonth_pre: 本月发布
+
+    articles_in_tag: 标签 "%{name}", 共有 %{size} 篇文章
+
+  user: 
+    admin: 管理员
+    normal: 会员
+    index: 第 %{index} 位会员
+    articles: "%{size} 篇文章"
+    comments: "%{size} 条评论"
+    followers: 关注者
+    following: 正在关注
+    follow: 关注
+    unfollow: 取消关注
+    my_blog: 我的博客
+    other_blog: TA的博客
+    
+    tab:
+      articles: 文章
+      comments: 评论
+      bio: 个人简介
+
+  notifications:
+    in_article: 在文章
+    post_comment: 评论了：
+    mention_me: 提及我：

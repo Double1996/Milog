@@ -1,0 +1,17 @@
+<% provide :pre_title, t("community.accounts") %>
+
+<div class="mainer" style="margin-top: 0; padding-top: 20px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-center-block">
+        <div class="boxed-group">
+          <%= content_tag :h3, t("community.account_num", num: @user_size) %>
+          <div class="boxed-group-inner">
+            <%= render 'features/users', users: @users, user_in_cols: 1 %>
+          </div>
+            <%= will_paginate @users, renderer: WillPaginate::ActionView::BlogLinkRenderer %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,451 @@
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+# Support new locale to see application_controller#set_locale
+
+en:
+  lang: EN
+  signup: Sign up
+  signin: Sign in
+  signed_in: Signed in
+  signout: Sign out
+  username: Username
+  email: Email Address
+  current_password: Current Password
+  password: Password
+  password_confirmation: Password Confirmation
+  forgot_password: Forgot your password
+  send_psw_reset_link: Send me password reset link
+  send_psw_reset_tips: Enter your email address and we'll send you password reset instructions.
+  reset_password: Reset Password
+  change_password: Change Password
+  update_password: Update Password
+  invalid: Invalid
+  delete: Delete
+  update: Update
+  opt: Operation
+  edit: Edit
+  confirm: Confirm
+  cancel: Cancel
+  submit: Submit
+
+  search: Search
+  search_in_blog: Search in this blog
+  search_in_site: Search in this site
+  search_result: Search for "%{token}", return %{size} articles
+
+  login: 
+    remember_me: Remember
+    forget_me: Forgot Password?
+  
+  syml:
+    dot: ', '
+
+  flash:
+    info:
+      validated_mail: Instructions for validating email have been sent to you
+      psw_reset_mail: Instructions for reseting password have been sent to you
+    danger:
+      link_invalid: The link is invalid
+      params_invalid: Invalid paramater 
+      default_category_change: Can't change the default category
+    warning:
+      link_expired: The link has expired
+      resend_validation_mail: click to resend validation mail
+      need_sign_in: Please sign in your account
+      update_profile: Profile updated without success
+      avatar_too_big: Avatar picture is too big (maximum is %{size} megabytes)
+      picture_too_big: Picture is too big (maximum is %{size} megabytes)
+      need_activation: Please validate your account
+      send_validation_mail: click to send validation mail
+      user_not_fount: Could not find username of "%{name}"
+      user_not_fount_by_id: Could not find user which id is "%{value}"
+      username_or_email_has_existed: Username or Email has present
+      article_not_fount: Could not find article which id is "%{value}"
+      category_not_fount: Could not find category which id is "%{value}"
+      user_categoryship_not_fount: Could not find usercategoryship which id is "%{value}"
+      tag_not_fount: Could not find tag which id is "%{value}"
+      comment_not_fount: Could not find comment which id is "%{value}"
+      picture_not_fount: Could not find picture which id is "%{value}"
+    success:
+      active_account: Account activated
+      reset_password: Password has been reset
+      update_profile: Profile updated successfully
+      update_avatar: Avatar updated successfully
+      save_article: Article saved successfully
+      delete_article_with_title: Article "%{title}" deleted successfully
+      save_resume: Resume saved successfully
+      delete_user: User "%{name}" has deleted
+      create_user: User "%{name}" has created successfully
+      update_account: Account Profile updated successfully
+      delete_article: Article which id is "%{value}" has deleted
+      create_article: Article has created successfully
+      update_article: Article has updated successfully
+      delete_category: Category which id is "%{value}" has deleted
+      delete_user_categoryship: UserCategoryship which id is "%{value}" has deleted
+      create: Created successfully
+      update: Updated successfully
+      delete_tag: Tag which id is "%{value}" has deleted
+      delete_comment: Comment which id is "%{value}" has deleted
+      delete_picture: Picture which id is "%{value}" has deleted
+
+  errors:
+    username_format: may only contain alphanumeric characters or hyphens(-_)
+    email_disabled: does not exist or disabled
+    not_right: is incorrect
+    not_find: couldn't find
+    invalid_format: is invalid
+    avatar_too_big: is too big (maximum is %{size} megabytes)
+    category_has_existed: The category "%{name}" has existed, please change one
+    category_not_fount:  The category isn't found
+    opt_illegal: Illegal Operation
+    tags_too_much: is too much (maximum is %{size}) 
+    must_be_present: must be present
+    must_be_posted: must be posted
+    paramater_illegal: Illegal Paramater
+    follower_following_be_unique: and Following ID must be unique
+    follower_not_eq_following: and Following ID must be not equal
+    actor_and_user_are_not_equal: and User ID must be not equal
+  success:
+    category_has_deleted: The category "%{name}" has deleted
+    category_has_updated: Rename this category "%{bef_name}" to "%{upd_name}"
+    content_has_saved: Content has saved
+    comment_has_deleted: "#%{index} has deleted"
+  ask:
+    user_delete:
+      pre: "Deleting user which username is \""
+      suf: "\"?"
+    article_delete:
+      pre: "Deleting article which id is \""
+      suf: "\"?"
+    category_delete:
+      pre: "Deleting category which id is\""
+      suf: "\"?"
+    user_categoryship_delete:
+      pre: "Deleting category of user which id is\""
+      suf: "\"?"
+    tag_delete:
+      pre: "Deleting tag which id is\""
+      suf: "\"?"
+    comment_delete:
+      pre: "Deleting comment which id is\""
+      suf: "\"?"
+    picture_delete:
+      pre: "Deleting picture which id is\""
+      suf: "\"?"
+
+  activerecord:
+    models:
+      user: User
+      category: Category
+      article: Article
+      picture: Picture
+      comment: Comment
+      resume: Resume
+      hold: Hold
+      tag: Tag
+      usership: Usership
+      notification: Notification
+    attributes:
+      user:
+        username: Username
+        email: Email
+        password: Password
+        current_password: Current Password
+        password_confirmation: Password Confirmation
+        avatar: Avatar picture
+      category:
+        name: Category
+      article:
+        title: Title
+        content: Content
+        category: Category
+        tag: Tag
+        user: User
+        user_id: User ID
+      picture:
+        picture: Picture
+      comment:
+        article: Article
+        content: Content
+        user: User
+        user_id: User ID
+      resume:
+        user: User
+        user_id: User ID
+        content: Content
+      hold: 
+        user_id: User
+        user: User
+        holdable_type: Type
+      user_categoryship:
+        user: User
+        user_id: User ID
+        category: Category
+        category_id: Category ID
+      tag:
+        name: Tag
+      usership:
+        follower: Follower
+        following: Following
+        follower_id: Follower ID
+        following_id: Following ID
+      notification:
+        actor_id: 通知发起者ID
+        user_id: 通知者ID
+
+  accounts_mailer:
+    hi: Hi %{username},
+    help: Please do not reply, If in doubt, please contact us %{support_email}
+    footer: '- Milog'
+    active_account: 
+      subject: Please confirm your email
+      header: Welcome to Milog. Please click on the following link to confirm your email address.
+      send_password_header: "Welcome to Milog. Your password: %{password}, please active your account and reset password in the [Account Profile]. Click on the following link to confirm your email address."
+      tips: Button not working? Copy and paste it into your browser.
+    reset_password: 
+      subject: Please reset your password
+      header: Here's a link to reset your password. Please click on it.
+      tips: If you didn't try to reset your password, you can ignore this message. Your password will remain the same until you click the link.
+  
+  home: Home
+  category: Category
+  archive: Archive
+  aboutme: About
+  search: Search
+  blog: Blog
+  new_blog: New Blog
+  account_profile: Account Profile
+  drafts: Drafts
+  resume: Resume
+  edit_resume: Edit Resume
+
+  profile:
+    nickname: Nickname
+    email: Email
+    email_public: Show my email to others
+    account: yourname
+    weibo: Weibo
+    personal_website: Personal Website
+    bio: Bio
+    upload_avatar: Upload Avatar
+    update_profile: Update Profile
+
+  categories:
+    default: Default
+    zero: No categories
+    other: "%{size} categories in total"
+    name: CategoryName
+    user: UserName
+    user_id: UserID
+
+  tags:
+    zero: No tags
+    other: "%{size} tags in total"  
+    name: TagName
+
+  comment:
+    zero: No comments
+    other: "%{size} comments in total"
+    edit: Edit
+    reply: Reply
+    delete: Delete
+    post: Post Comment
+    update: Update Comment
+    error: "Error : "
+    content: Content
+    user: User
+    user_id: User ID
+    article_id: Article ID
+    reply: Reply
+    reply_id: Reply ID
+    index: Index
+    create_time: Created Time
+    deleted_state: Delete?
+
+  article:
+    title_tips: Fill in the article title here
+    category: Category
+    new_category: New Category/Enter
+    setting_category: Setting Category
+    edit: Edit
+    preview: Preview
+    tag: Tags
+    save: Save as Draft
+    post: Post a Article
+    to_view: View Article
+    tag_tips: Please enter the keywords with separated by commas, up to five
+    post_on: Posted on
+    edit_on: "Last Edited On"
+    category_in: In
+    view: View
+    comment: Comment
+    read_more: More»
+    zero: No articles
+    other: "%{size} articles in total"
+    all: Total articles
+    title: Title
+    view_count: View Count
+    comment_count: Comment Count
+    user: User
+    create_time: Created Time
+    user_id: User ID
+    category_id: Category ID
+    update_article: Update Article
+
+  draft:
+    zero: No drafts
+    other: "%{size} tags in total"
+
+  resumes:
+    pubilc_resume: Show my resume to others
+    save_resume: Save Resume
+
+  picture:
+    name: Picture
+    url: Url
+    user: User
+    upload_time: Upload Time
+
+  will_paginate:
+    previous_label: '<'
+    next_label: '>'
+
+  markdown-toolbar:
+    bold: Bold
+    italic: Italic
+    title: Title
+    quote: Quote
+    ul: Unordered List
+    ol: Ordered List
+    code: Code
+    link: Link
+    image: Image
+    emoji: Emoji
+
+  console: Console
+  console-nav:
+    summary: Summary
+    user: User
+    article: Article
+    category: Category
+    tag: Tag
+    comment: Comment
+    picture: Picture
+  c-summary:
+    total: Total
+    posted: Posted
+    not_post: Unposted
+    used: Used
+    not_use: Unused
+    deleting: Deleting
+    will_delete: To be deleted
+    user:
+      zero: No users
+      other: "%{size} users in total"
+      normal: Member
+      admin: Admin
+      disabled: Disabled
+      new: New User
+      state: State
+      activation: Activation
+      created_at: Joindate
+      update: Update Profile of User
+      update_account: Update Account
+      account_info: Account Profile
+      profile: User Profile
+    article:
+      zero: No articles
+      other: "%{size} articles in total"
+      new: New Article
+    category:
+      zero: No categories
+      other: "%{size} categories in total"
+      new: New Category/UserCategoryShip
+      aboutuser: About User
+      rename: Rename Category
+      update_ship: Update UserCategoryShip
+    tag:
+      zero: No tags
+      other: "%{size} tags in total"
+      new: New Tag
+      rename: Rename Tag
+    comment:
+      zero: No comments
+      other: "%{size} comments in total"
+      new: New Comment
+    picture:
+      zero: No pictures
+      other: "%{size} pictures in total"
+      new: Upload Picture
+
+  community:
+    slogan: Share Content And Ideas
+    sub_slogan: A community based on content sharing
+    our_social: Community
+    join_us: Join Us
+    my_space: My Space
+
+    home: Community
+    hottest: Hottest
+    latest: Latest
+    statistics: Statistics
+
+    opts: 'Opts :'
+    more: More
+    time: Time
+    view: View
+    comment: Comment
+
+    statistics: Statistics
+    account_num: 'Members: %{num}'
+    article_num: 'Articles: %{num}'
+    comment_num: 'Comments: %{num}'
+    accounts: Members
+    active_account_tmonth: Active member in this month
+
+    hottest_today: 'Hottest Today: %{num}'
+    hottest_tweek: 'Hottest This Week: %{num}'
+    hottest_tmonth: 'Hottest This Month: %{num}'
+    latest_today: 'Latest Today: %{num}'
+    latest_tweek: 'Latest This Week: %{num}'
+    latest_tmonth: 'Latest This Month: %{num}'
+    hottest_today_pre: Hottest Today
+    hottest_tweek_pre: Hottest This Week
+    hottest_tmonth_pre: Hottest This Month
+    latest_today_pre: Latest Today
+    latest_tweek_pre: Latest This Week
+    latest_tmonth_pre: Latest This Month
+
+    articles_in_tag: Tag "%{name}" has %{size} articles
+
+  user: 
+    admin: Admin
+    normal: Member
+    index: The %{index}th member
+    articles: "%{size} articles"
+    comments: "%{size} comments"  
+    followers: Followers
+    following: Following
+    follow: Follow
+    unfollow: Unfollow
+    my_blog: My Blog
+    other_blog: His/Her Blog
+
+    tab:
+      articles: Article
+      comments: Comment
+      bio: Bio
+
+  notifications:
+    in_article: In the Article
+    post_comment: 'Post comment:'
+    mention_me: 'Mention me:'

@@ -1,0 +1,4 @@
+<% provide :pre_title, t("article.tag")+ " : " +@tag.name+" | "+t("community.home") %>
+<% provide :boxed_title, t("community.articles_in_tag", name: @tag.name, size: @article_size) %>
+
+<%= render 'articles_list', articles: @articles %>

@@ -1,0 +1,74 @@
+<% provide :pre_title, @article.title %>
+<div class="mainer article-mainer">
+    <div class="container-fluid">
+        <div class="col-md-7 col-lg-7 col-center-block content-wrap" >
+            <div id="content">
+                <section class="post-expand" >
+                    <article class="post">
+                        <header class="post-header post-header-center">
+                            <!-- 标题 -->
+                            <%= content_tag :h1, content_tag(:span, @article.title, class: 'post-title-normal'), class: 'post-title' %>
+                            <!-- 文章属性 -->
+                            <div class="post-meta">
+                                <!-- 时间 -->
+                                <span class="post-time">
+                                    <% if @article.posted %>
+                                    <%= content_tag :span, t('article.post_on'), class: 'post-meta-item-text' %>
+                                    <%= mtime_tag @article.created_at %>
+                                    <% else %>
+                                    <%= content_tag :span, t('article.edit_on'), class: 'post-meta-item-text' %>
+                                    <%= mtime_tag @article.updated_at %>
+                                    <% end %>
+                                </span>
+                                <!-- 文章分类 -->
+                                <span class="post-category"> &nbsp;|&nbsp;
+                                    <%= content_tag :span, t('article.category_in') %>
+                                    <%= category_tag @user, @category %>
+                                </span>
+                                <!-- 阅读与评论数 -->
+                                <span class="post-view-comments"> &nbsp;|&nbsp;
+                                    <%= content_tag :span, t('article.view'), class: 'post-meta-item-text' %> ·
+                                    <%= content_tag :span, @article.view_count, class: 'post-view-count' %>&nbsp;
+                                    <%= content_tag :span, t('article.comment'), class: 'post-meta-item-text' %> ·
+                                    <%= content_tag :span, @article.comment_count, class: 'post-view-count', id: 'post-comment-count' %>
+                                </span>
+                                <% if signed_in? && current_user == @user %>
+                                <span class="post-edit"> &nbsp;|&nbsp;
+                                    <%= link_to t('article.edit'), edit_article_path(@article) %>
+                                </span>
+                                <% end %>
+                            </div>
+                        </header>
+                        <!-- 文章内容 -->
+                        <div class="post-body">
+                            <div class="standard markdown-body">
+                                <%= markdown_tag @article %>
+                            </div>
+                        </div>
+                        <!-- 标签与文章导航 -->
+                        <footer class="post-footer">
+                            <div class="post-tags" >
+                                <%= tags_tag_with_user @user, @tags %>
+                            </div>
+                            <div class="post-nav">
+                                <!-- 上一篇文章 -->
+                                <div class="post-nav-prev post-nav-item">
+                                    <%= pre_article_tag @pre_article %>
+                                </div>
+                                <!-- 下一篇文章 -->
+                                <div class="post-nav-next post-nav-item">
+                                    <%= next_article_tag @next_article %>
+                                </div>
+                            </div>
+                        </footer>
+                    </article>
+                </section>
+
+
+                <!-- 评论 -->
+                <%= render 'features/comments' if @article.posted %>
+            </div>
+        </div>
+    </div>
+</div>
+<%= javascript_include_tag 'editor-markdown' %>
