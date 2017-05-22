@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   mount Notifications::Engine => "/notifications"
 
   root 'home#index'
+
+  # 一些静态介绍页面
+  get '/about',    to: 'home#about'
   
   get '/signup' => 'accounts#new'
   post '/signup' => 'accounts#create'
