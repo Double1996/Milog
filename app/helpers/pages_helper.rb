@@ -8,7 +8,7 @@ module PagesHelper
 
   ## 设置标题
   def title(pre_title = '')
-    site_name = "Milog"
+    site_name = "机械工程材料网"
     return site_name if pre_title.blank?
     pre_title + " · " + site_name
   end

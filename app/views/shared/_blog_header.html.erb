@@ -4,7 +4,7 @@
     <!-- 导航栏首部 -->
     <div class="navbar-header">
       <!-- Logo -->
-      <%= link_to image_tag("logo.png", alt:"Milog", class: "logo"), main_app.root_path, class: "navbar-brand" %>
+      <%= link_to image_tag("logo.png", alt: "Milog", class: "logo"), main_app.root_path, class: "navbar-brand" %>
       <!-- 切换语系 -->
       <%= link_to_locale request.path, mclass: "navbar-text switch-lang" %>
 
@@ -16,20 +16,34 @@
         <span class="icon-bar"></span>
       </button>
     </div>
+
+    <ul class="nav navbar-nav navbar-center main-nav">
+      <li><%= link_to "在线考试", about_path %></li>
+      <li><%= link_to "教学资源", about_path %>
+        <ul class="dropdown-menu">
+          <li><%= link_to "教学资源", about_path %>
+          <li><%= link_to "教学资源", about_path %>
+        </ul>
+      </li>
+      <li><%= link_to "关于我们", about_path %></li>
+      <li><%= link_to "关于我们", about_path %></li>
+
+    </ul>
+
     <!-- 操作菜单 -->
     <%= render 'shared/header_opt_menu' %>
-    
+
     <!-- 主菜单项 -->
     <% if yield(:hidden_nav_center_items).blank? %>
-    <div class="collapse navbar-collapse" id="collapse-nav">
-      <ul class="nav navbar-nav navbar-center main-nav">
-        <%= content_tag :li, link_to(t("blog"), main_app.blog_user_path(@user.username)) %>
-        <%= content_tag :li, link_to(t("category"), main_app.categories_user_path(@user.username)) %>
-        <%= content_tag :li, link_to(t("archive"), main_app.archive_user_path(@user.username)) %>
-        <%= content_tag :li, link_to(t("aboutme"), main_app.aboutme_user_path(@user.username)) %>
-        <%= content_tag :li, link_to(t("search"), "#", id: 'search') %>
-      </ul>
-    </div>
+        <div class="collapse navbar-collapse" id="collapse-nav">
+          <ul class="nav navbar-nav navbar-center main-nav">
+            <%= content_tag :li, link_to(t("blog"), main_app.blog_user_path(@user.username)) %>
+            <%= content_tag :li, link_to(t("category"), main_app.categories_user_path(@user.username)) %>
+            <%= content_tag :li, link_to(t("archive"), main_app.archive_user_path(@user.username)) %>
+            <%= content_tag :li, link_to(t("aboutme"), main_app.aboutme_user_path(@user.username)) %>
+            <%= content_tag :li, link_to(t("search"), "#", id: 'search') %>
+          </ul>
+        </div>
     <% end %>
   </div>
 </nav>
