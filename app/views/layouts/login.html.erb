@@ -7,16 +7,17 @@
     <div class="login">
       <!-- 语系切换 -->
       <%= content_tag :div, link_to_locale(request.path), class: "switch-lang" %>
-      <div class="clearfix"></div>
+      <canvas id="canvas"></canvas>
+      <video id="background_video" loop muted></video>
 
       <div class="container">
         <div class="col-md-3 col-center-block login-box">
           <div class="logo">
             <%= link_to image_tag("logo.png", alt:"machine", class: "img-responsive center-block"), "/" %>
           </div>
-          
+
           <h6></h6>
-          
+
           <!-- 标签 -->
           <ul class="tab">
             <%= content_tag :li, link_to_login('signin', 'under-line', yield(:login)), class: "signin" %>
