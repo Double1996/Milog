@@ -1,0 +1,7 @@
+production:
+  address: "smtp.163.com"
+  port: 25
+  authentication: "plain"
+  user_name: "forrestshuang@163.com"
+  password: "13979458182"
+  enable_starttls_auto: true
