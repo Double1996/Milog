@@ -11,7 +11,7 @@ RSpec.describe "Sessions", type: :request do
     it "sign in with valid information, sign out in last" do
       get "/signin"
       expect(response).to have_http_status :success
-      expect(response).to render_template :new
+      expect(response).to render_template :news
 
       post '/signin', params: session
       expect(response).to have_http_status :redirect
@@ -53,7 +53,7 @@ RSpec.describe "Sessions", type: :request do
     it "shouldn't sign in with invalid email" do
       get "/signin"
       expect(response).to have_http_status :success
-      expect(response).to render_template :new
+      expect(response).to render_template :news
 
       session[:session][:email] = "@"*7
       xhr :post, '/signin', params: session
@@ -65,7 +65,7 @@ RSpec.describe "Sessions", type: :request do
     it "shouldn't sign in with password not match" do
       get "/signin"
       expect(response).to have_http_status :success
-      expect(response).to render_template :new
+      expect(response).to render_template :news
 
       session[:session][:password] = "Not" + user.password
       xhr :post, '/signin', params: session

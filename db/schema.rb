@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130064900) do
+ActiveRecord::Schema.define(version: 20170526073413) do
 
   create_table "article_pictureships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "article_id", null: false
@@ -158,6 +158,13 @@ ActiveRecord::Schema.define(version: 20170130064900) do
     t.integer "follower_id",  null: false
     t.integer "following_id", null: false
     t.index ["follower_id", "following_id"], name: "index_userships_on_follower_id_and_following_id", unique: true, using: :btree
+  end
+
+  create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "video",                      null: false
+    t.boolean  "posted",     default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end

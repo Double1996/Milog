@@ -7,15 +7,15 @@ RSpec.describe SessionsController, type: :controller do
   let(:user) { User.create username: "aTestUser", email: "aTestUser@test.com", password: "aTestUserPsw", password_confirmation: "aTestUserPsw"}
   let(:session) { { session:{ email: user.email, password: user.password, remember_me: "0" } } }
 
-  describe '#new' do
-    it "should have new action" do
-      get :new
+  describe '#news' do
+    it "should have news action" do
+      get :news
       expect(response).to have_http_status :success
     end
 
-    it "should render new template" do
-      get :new
-      expect(response).to render_template :new
+    it "should render news template" do
+      get :news
+      expect(response).to render_template :news
     end
   end
 
@@ -52,14 +52,14 @@ RSpec.describe SessionsController, type: :controller do
       expect(remembered_me?).to eq false
     end
 
-    it "should render new when invalid email " do 
+    it "should render news when invalid email " do
       session[:session][:email] = "Not" + user.email
       post :create, params: session, format: :js
       expect(response).to have_http_status :success
       expect(@request.test_signed_in?).to eq false
     end
 
-    it "should render new when invalid password" do 
+    it "should render news when invalid password" do
       session[:session][:password] = "Not" + user.password
       post :create, params: session, format: :js
       expect(response).to have_http_status :success

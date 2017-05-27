@@ -17,16 +17,16 @@ RSpec.describe AccountsController, type: :controller do
 
   let(:user) { User.new username: "aTestUser", email: "aTestUser@test.com", password: "aTestUserPsw", password_confirmation: "aTestUserPsw" }
 
-  describe '#new' do
-    it "should have an new action" do
-      get :new
+  describe '#news' do
+    it "should have an news action" do
+      get :news
       expect(response).to be_success
       expect(response).to have_http_status(:success)
     end
 
-    it "renders th new template" do
-      get :new
-      expect(response).to render_template(:new)
+    it "renders th news template" do
+      get :news
+      expect(response).to render_template(:news)
     end
   end
 
@@ -224,7 +224,7 @@ RSpec.describe AccountsController, type: :controller do
         expect(user.authenticated?(:password, user.password)).to eq true
       end
 
-      it "shouldn't update with new password invalid" do
+      it "shouldn't update with news password invalid" do
         psw[:user][:new_psw] = "1"
         patch :update, params: psw, format: :js
 
@@ -235,7 +235,7 @@ RSpec.describe AccountsController, type: :controller do
         expect(user.authenticated?(:password, user.password)).to eq true
       end
 
-      it "shouldn't update with new password confirmation don't match" do
+      it "shouldn't update with news password confirmation don't match" do
         psw[:user][:new_psw_confirmation] = "Not"+psw[:user][:new_psw]
         patch :update, params: psw, format: :js
 

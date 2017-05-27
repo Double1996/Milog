@@ -5,16 +5,17 @@ Rails.application.routes.draw do
 
   # 一些静态介绍页面
   get '/about',    to: 'home#about'
+  get '/news', to: 'news#index'
   
-  get '/signup' => 'accounts#new'
+  get '/signup' => 'accounts#news'
   post '/signup' => 'accounts#create'
 
-  get '/signin' => 'sessions#new'
+  get '/signin' => 'sessions#news'
   post '/signin' => 'sessions#create'
   delete '/signout' => 'sessions#destroy'
 
   namespace :accounts, as: 'accounts', constraints: { id: User::USERNAME_FORMAT } do
-    get '/passwords/forgot' => 'passwords#new'
+    get '/passwords/forgot' => 'passwords#news'
     post '/passwords/forgot' => 'passwords#create'
 
     resources :passwords, only: [:edit, :update]

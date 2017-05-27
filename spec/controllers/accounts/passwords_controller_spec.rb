@@ -5,10 +5,10 @@ RSpec.describe Accounts::PasswordsController, type: :controller do
   let(:forgot) { { forgot: { email: user.email } } }
 
   # 重置密码请求 输入邮箱表单
-  context "#new" do
-    it "should have new action and render :new template" do 
-      get :new
-      expect(response).to render_template :new
+  context "#news" do
+    it "should have news action and render :news template" do
+      get :news
+      expect(response).to render_template :news
     end
   end
 
@@ -24,28 +24,28 @@ RSpec.describe Accounts::PasswordsController, type: :controller do
       expect(user.reset_password_digest).not_to eq nil 
       expect(user.reset_password_at).not_to eq nil        
       expect(flash[:info]).to eq I18n.t "flash.info.psw_reset_mail"
-      expect(response).to render_template :new
+      expect(response).to render_template :news
     end
 
     it "shouldn't send reset_password_link when email is empty" do 
       forgot[:forgot][:email] = ""
       post :create, params: forgot
       expect(flash[:info]).to eq nil
-      expect(response).to render_template :new
+      expect(response).to render_template :news
     end
 
     it "shouldn't send reset_password_link when email isn't found" do 
       forgot[:forgot][:email] = "Not" + user.email
       post :create, params: forgot
       expect(flash[:info]).to eq nil
-      expect(response).to render_template :new      
+      expect(response).to render_template :news
     end
 
     it "shouldn't send reset_password_link when email format is invalid" do
       forgot[:forgot][:email] = "brebab@bbre"
       post :create, params: forgot
       expect(flash[:info]).to eq nil
-      expect(response).to render_template :new                
+      expect(response).to render_template :news
     end
   end
 

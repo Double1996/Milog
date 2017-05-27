@@ -66,9 +66,9 @@ RSpec.describe ArticlesController, type: :controller do
     end
   end
 
-  context "#new" do
+  context "#news" do
     it "should redirect to sign in path when user no sign in" do
-      get :new
+      get :news
       expect(response).to have_http_status :redirect
       expect(response).to redirect_to signin_path
       expect(flash[:warning]).to include I18n.t("flash.warning.need_sign_in")
@@ -76,16 +76,16 @@ RSpec.describe ArticlesController, type: :controller do
 
     it "should redirect to root path when user no active" do
       sign_in user
-      get :new
+      get :news
       expect(response).to redirect_to root_path
       expect(flash[:warning]).to include I18n.t('flash.warning.need_activation')
     end
 
-    it "should render new when user signed in and activated" do
+    it "should render news when user signed in and activated" do
       sign_in user
       user.update_attribute :activated, true
-      get :new
-      expect(response).to render_template :new
+      get :news
+      expect(response).to render_template :news
     end
   end
 

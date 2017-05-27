@@ -9,7 +9,7 @@ RSpec.describe "ApplicationRoutes", type: :routing do
 
   context "signup" do
     it "get /signup success" do
-      expect(get: '/signup').to route_to 'accounts#new'
+      expect(get: '/signup').to route_to 'accounts#news'
     end
 
     it "post /signup success" do
@@ -19,7 +19,7 @@ RSpec.describe "ApplicationRoutes", type: :routing do
 
   context "signin" do
     it "get /signin success" do
-      expect(get: '/signin').to route_to 'sessions#new'
+      expect(get: '/signin').to route_to 'sessions#news'
     end
 
     it "post /signin success" do 
@@ -34,8 +34,8 @@ RSpec.describe "ApplicationRoutes", type: :routing do
   end
 
   context "users" do
-    it "get /users/new fail" do
-      expect(get: '/users/new').not_to be_routable
+    it "get /users/news fail" do
+      expect(get: '/users/news').not_to be_routable
     end
 
     it "post /users fail" do
@@ -106,16 +106,16 @@ RSpec.describe "ApplicationRoutes", type: :routing do
       end
     end
 
-    context "/accounts/activations/new is routable " do 
-      it "get /accounts/activations/new" do 
-        expect(get: '/accounts/activations/new').to route_to 'accounts/activations#new'
+    context "/accounts/activations/news is routable " do
+      it "get /accounts/activations/news" do
+        expect(get: '/accounts/activations/news').to route_to 'accounts/activations#news'
       end
     end
   end
 
   describe "reset password" do 
     it "get accounts/passwords/forgot is routable" do 
-      expect(get: 'accounts/passwords/forgot').to route_to 'accounts/passwords#new'
+      expect(get: 'accounts/passwords/forgot').to route_to 'accounts/passwords#news'
     end
 
     it "post accounts/password/forgot is routable" do 
@@ -200,8 +200,8 @@ RSpec.describe "ApplicationRoutes", type: :routing do
       expect(post: '/articles').to route_to 'articles#create'
     end
 
-    it "get /articles/new" do
-      expect(get: '/articles/new').to route_to 'articles#new'
+    it "get /articles/news" do
+      expect(get: '/articles/news').to route_to 'articles#news'
     end
 
     it "get /articles/1" do

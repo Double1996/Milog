@@ -62,15 +62,15 @@ RSpec.describe Accounts::ActivationsController, type: :controller do
   end
 
   # 重新发送激活链接
-  context "#new" do 
+  context "#news" do
     it "should render 404 with id when don't sign in" do
-      get :new, params: { id: "abcdtest"}     
+      get :news, params: {id: "abcdtest"}
       expect(response.status).to eq 404
     end
 
     it "should render 404 when user don't sign in" do
       expect(test_signed_in?).to eq false
-      get :new
+      get :news
       expect(response.status).to eq 404
     end
 
@@ -80,7 +80,7 @@ RSpec.describe Accounts::ActivationsController, type: :controller do
       expect(current_user).not_to eq nil
       sign_out
       expect(current_user).to eq nil      
-      get :new
+      get :news
       expect(response.status).to eq 404
     end
 
@@ -89,14 +89,14 @@ RSpec.describe Accounts::ActivationsController, type: :controller do
       user.reload
       expect(user.activated?).to eq true
       sign_in user
-      get :new
+      get :news
       expect(response.status).to eq 404
     end
 
     it "should re-send activation mail when valid user" do
       expect(user.activated?).to eq false
       sign_in user
-      get :new
+      get :news
       expect(flash[:info]).to eq I18n.t "flash.info.validated_mail"
       expect(response.status).not_to eq 404 
       expect(response).to have_http_status :redirect
