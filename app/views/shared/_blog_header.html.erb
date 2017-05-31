@@ -19,14 +19,9 @@
 
     <ul class="nav navbar-nav navbar-center main-nav">
       <li><%= link_to "在线考试", about_path %></li>
-      <li><%= link_to "教学资源", about_path %>
-        <ul class="dropdown-menu">
-          <li><%= link_to "教学资源", about_path %>
-          <li><%= link_to "教学资源", about_path %>
-        </ul>
-      </li>
-      <li><%= link_to "新闻动态", news_path %></li>
-      <li><%= link_to "关于我们", about_path %></li>
+      <li><%= link_to "教学资源", about_path %></li>
+      <li><%= link_to "新闻动态", about_path %></li>
+      <li><%= link_to (t("about.about_our")), about_path %></li>
       <li><%= link_to (t("community.our_social")), community_index_path %></li>
 
     </ul>

@@ -5,4 +5,8 @@ class HomeController < ApplicationController
 
   def about
   end
+
+  def news
+
+  end
 end

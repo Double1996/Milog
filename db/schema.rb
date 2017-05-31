@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526073413) do
+ActiveRecord::Schema.define(version: 20170529033306) do
 
   create_table "article_pictureships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "article_id", null: false
@@ -65,6 +65,13 @@ ActiveRecord::Schema.define(version: 20170526073413) do
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
+  create_table "exams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title",       null: false
+    t.string   "description", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "holds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id",                                     null: false
     t.string  "holdable_type",                               null: false
@@ -101,6 +108,17 @@ ActiveRecord::Schema.define(version: 20170526073413) do
     t.boolean  "posted",     default: false
     t.integer  "user_id",                    null: false
     t.index ["user_id"], name: "index_pictures_on_user_id", using: :btree
+  end
+
+  create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "text",         limit: 65535
+    t.integer  "exam_id"
+    t.integer  "options"
+    t.boolean  "multi_select"
+    t.boolean  "require"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["exam_id"], name: "index_questions_on_exam_id", using: :btree
   end
 
   create_table "resume_pictureships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
