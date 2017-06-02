@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/about',    to: 'home#about'
   get '/news',     to: 'news#index'
 
-  get '/signup' => 'accounts#news'
+  get '/signup' => 'accounts#new'
   post '/signup' => 'accounts#create'
 
   get '/signin' => 'sessions#news'
