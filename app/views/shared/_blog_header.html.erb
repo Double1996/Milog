@@ -4,7 +4,7 @@
     <!-- 导航栏首部 -->
     <div class="navbar-header">
       <!-- Logo -->
-      <%= link_to image_tag("logo.png", alt: "Milog", class: "logo"), main_app.root_path, class: "navbar-brand" %>
+      <%= link_to image_tag("logo.gif", alt: "Machine", class: "logo"), main_app.root_path, class: "navbar-brand" %>
       <!-- 切换语系 -->
       <%= link_to_locale request.path, mclass: "navbar-text switch-lang" %>
 
@@ -20,7 +20,7 @@
     <ul class="nav navbar-nav navbar-center main-nav">
       <li><%= link_to "在线考试", about_path %></li>
       <li><%= link_to "教学资源", about_path %></li>
-      <li><%= link_to "新闻动态", about_path %></li>
+      <li><%= link_to (t("news.news")), news_path %></li>
       <li><%= link_to (t("about.about_our")), about_path %></li>
       <li><%= link_to (t("community.our_social")), community_index_path %></li>
 

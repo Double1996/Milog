@@ -1,10 +1,10 @@
-# Milog
+# machine
 
 一基于 [ Ruby on Rails ](https://github.com/rails/rails) 的个人博客网站. http://hijinhu.me/hijinhu/  
 
 Guest Account > Email: aguest@hijinhu.me | Password: 123456
 
-静态页面可访问 https://github.com/HiKumho/milog/tree/static_pages
+静态页面可访问 https://github.com/HiKumho/machine/tree/static_pages
 
 ## 特点
 
@@ -42,7 +42,7 @@ Guest Account > Email: aguest@hijinhu.me | Password: 123456
 
 ### 2017年3月14日
 
-+ 实现 Milog Android 客户端 [Milog-Android](https://github.com/HiKumho/milog-android)
++ 实现 machine Android 客户端 [machine-Android](https://github.com/HiKumho/machine-android)
 
 + 修复文章中图片尺寸过大，溢出页面
 
@@ -81,7 +81,7 @@ Ubuntu 14.04 / Git / Ruby 2.3.1 / Rails 5.0.0 / MariaDB 5.5.52
 
 ### 下载
 ```
-git clone git@github.com:Hikumho/milog.git
+git clone git@github.com:Hikumho/machine.git
 ```
 
 ### 数据库
@@ -99,7 +99,7 @@ sudo apt-get install mariadb-server
 
 项目配置
 
-在Milog项目下，新建`config/local_env.yml`， 并写入
+在machine项目下，新建`config/local_env.yml`， 并写入
 ```
 MYSQL_USERNAME: yourname
 MYSQL_PASSWORD: yourpassword

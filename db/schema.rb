@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529033306) do
+ActiveRecord::Schema.define(version: 20170602080639) do
 
   create_table "article_pictureships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "article_id", null: false
@@ -119,6 +119,21 @@ ActiveRecord::Schema.define(version: 20170529033306) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["exam_id"], name: "index_questions_on_exam_id", using: :btree
+  end
+
+  create_table "respondents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "class_id"
+    t.integer  "student_id"
+    t.integer  "exam_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "response_options", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "question_id",               null: false
+    t.text     "text",        limit: 65535, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "resume_pictureships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

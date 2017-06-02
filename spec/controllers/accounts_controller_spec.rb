@@ -267,7 +267,7 @@ RSpec.describe AccountsController, type: :controller do
         user.update_attribute :activated, true
       end
 
-      let(:img) { fixture_file_upload('images/logo.png', 'image/png') }
+      let(:img) { fixture_file_upload('images/logo.gif', 'image/png') }
 
       it "should has updated with valid avatar" do
         avatar[:user][:avatar] = img
