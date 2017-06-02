@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # 一些静态介绍页面
   get '/about',    to: 'home#about'
   get '/news',     to: 'news#index'
-  
+
   get '/signup' => 'accounts#news'
   post '/signup' => 'accounts#create'
 
