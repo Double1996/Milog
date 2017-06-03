@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   get '/signup' => 'accounts#new'
   post '/signup' => 'accounts#create'
 
-  get '/signin' => 'sessions#news'
+  get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   delete '/signout' => 'sessions#destroy'
 
   namespace :accounts, as: 'accounts', constraints: { id: User::USERNAME_FORMAT } do
-    get '/passwords/forgot' => 'passwords#news'
+    get '/passwords/forgot' => 'passwords#new'
     post '/passwords/forgot' => 'passwords#create'
 
     resources :passwords, only: [:edit, :update]
@@ -51,6 +51,7 @@ Rails.application.routes.draw do
     resources :tags, except: :show
     resources :comments, except: :show
     resources :pictures, only: [:index, :destroy, :create]
+    resources :exams, except: :show
   end
 
   # 社区

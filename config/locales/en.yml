@@ -205,11 +205,11 @@ en:
   accounts_mailer:
     hi: Hi %{username},
     help: Please do not reply, If in doubt, please contact us %{support_email}
-    footer: '- Milog'
+    footer: '- machine'
     active_account: 
       subject: Please confirm your email
-      header: Welcome to Milog. Please click on the following link to confirm your email address.
-      send_password_header: "Welcome to Milog. Your password: %{password}, please active your account and reset password in the [Account Profile]. Click on the following link to confirm your email address."
+      header: Welcome to machine. Please click on the following link to confirm your email address.
+      send_password_header: "Welcome to machine. Your password: %{password}, please active your account and reset password in the [Account Profile]. Click on the following link to confirm your email address."
       tips: Button not working? Copy and paste it into your browser.
     reset_password: 
       subject: Please reset your password
@@ -340,6 +340,7 @@ en:
     tag: Tag
     comment: Comment
     picture: Picture
+    exam: Exam
   c-summary:
     total: Total
     posted: Posted
@@ -452,3 +453,6 @@ en:
 
   about:
     about_our: About
+
+  news:
+    news: Machine News

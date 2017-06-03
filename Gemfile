@@ -66,6 +66,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # 预览发送邮件
   gem "letter_opener"
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
 end
 
 group :development, :test do

@@ -343,6 +343,7 @@ zh-CN:
     tag: 标签
     comment: 评论
     picture: 图片
+    exam: 考试
   c-summary:
     total: 全部
     posted: 已发布
@@ -454,3 +455,6 @@ zh-CN:
 
   about:
     about_our: 关于我们
+
+  news:
+    news: 机械新闻

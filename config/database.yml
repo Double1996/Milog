@@ -50,5 +50,5 @@ production:
   username: root
   password: 1397
   database: machine_production
-#  username: milog
-#  password: <%= ENV['MILOG_DATABASE_PASSWORD'] %>
+#  username: machine
+#  password: <%= ENV['machine_DATABASE_PASSWORD'] %>
